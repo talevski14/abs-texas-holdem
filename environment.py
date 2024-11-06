@@ -1,11 +1,10 @@
 from pettingzoo.classic import texas_holdem_no_limit_v6
 
-import super_beginner
-import random_player
+import random_player, super_beginner
 
 env = texas_holdem_no_limit_v6.env(render_mode="ansi", num_players=2)
 
-num_episodes = 100000
+num_episodes = 100_000
 
 games_won_player1 = 0
 games_won_player2 = 0
