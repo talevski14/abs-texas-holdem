@@ -1,0 +1,22 @@
+Number of episodes: 1 000 000
+
+Beginner vs Random
+
+Player 1 wins: 987279
+Player 2 wins: 12721
+Average reward per episode for player 1: 1.248116
+Average reward per episode for player 2: -1.248116
+
+Random vs Random
+
+Player 1 wins: 840437
+Player 2 wins: 159563
+Average reward per episode for player 1: 1.727414
+Average reward per episode for player 2: -1.727414
+
+Beginner vs Beginner
+
+Player 1 wins: 999598
+Player 2 wins: 402
+Average reward per episode for player 1: 1.067045
+Average reward per episode for player 2: -1.067045
