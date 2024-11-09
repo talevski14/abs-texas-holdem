@@ -18,7 +18,6 @@ def watch(
     policy.eval()
     policy.policies[agents[AGENT_ID - 1]].set_eps(EPS_TEST)
     collector = Collector(policy, env, exploration_noise=True)
-    result = collector.collect(n_episode=1, render=RENDER)
+    result = collector.collect(n_episode=10, render=RENDER)
     rews, lens = result["rews"], result["lens"]
     print(f"Final reward: {rews[:, AGENT_ID - 1].mean()}, length: {lens.mean()}")
-

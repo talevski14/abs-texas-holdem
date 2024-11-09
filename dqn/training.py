@@ -1,3 +1,4 @@
+import random
 from typing import Optional, Tuple
 from tianshou.policy import BasePolicy
 import numpy as np
@@ -43,23 +44,21 @@ def train_agent(
     train_collector.collect(n_step=BATCH_SIZE * TRAINING_NUM)
 
     # ======== tensorboard logging setup =========
-    log_path = os.path.join(LOGDIR, "tic-tac-toe", "dqn")
+    log_path = os.path.join(LOGDIR, "texas-holdem-unlimited", "dqn")
     writer = SummaryWriter(log_path)
     logger = TensorboardLogger(writer)
 
     # ======== callback functions used during training =========
     def save_best_fn(policy):
         model_save_path = os.path.join(
-            LOGDIR, "tic-tac-toe", "dqn", "policy.pth"
+            LOGDIR, "texas-holdem-unlimited", "dqn", "policy.pth"
         )
         torch.save(
             policy.policies[agents[AGENT_ID - 1]].state_dict(), model_save_path
         )
 
-# best rewards per epoch
     def stop_fn(rewards):
-        print(f"sho e ova {rewards}")
-        return 1 >= MIN_WINS
+        return rewards >= REWARDS_AVERAGE
 
     def train_fn(epoch, env_step):
         policy.policies[agents[AGENT_ID - 1]].set_eps(EPS_TRAIN)
@@ -67,11 +66,8 @@ def train_agent(
     def test_fn(epoch, env_step):
         policy.policies[agents[AGENT_ID - 1]].set_eps(EPS_TEST)
 
-#site rewards in batch
     def reward_metric(rews):
-        print(f"site:{rews}")
-        print(f"sopstvenite: {rews[:,AGENT_ID - 1]}")
-        return rews[:,AGENT_ID - 1]
+        return rews[:, AGENT_ID - 1]
 
     # trainer
     result = offpolicy_trainer(
