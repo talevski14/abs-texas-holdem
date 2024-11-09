@@ -1,0 +1,27 @@
+import torch
+
+SEED = 1626
+EPS_TEST = 0.05
+EPS_TRAIN = 0.1
+BUFFER_SIZE = 20_000
+LR = 1E-4
+GAMMA = 0.9
+N_STEP = 3
+TARGET_UPDATE_FREQ = 320
+EPOCH = 100
+STEP_PER_EPOCH = 10
+STEP_PER_COLLECT = 10
+UPDATE_PER_STEP = 0.1
+BATCH_SIZE = 64
+HIDDEN_SIZES = [128, 128, 128, 128]
+TRAINING_NUM = 10
+TEST_NUM = 10
+LOGDIR = "log"
+RENDER = 0.1
+WIN_RATE = 2
+MIN_WINS = 600
+WATCH = False
+AGENT_ID = 1
+RESUME_PATH = ""
+OPPONENT_PATH = "log/tic-tac-toe/dqn/policy.pth"
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
