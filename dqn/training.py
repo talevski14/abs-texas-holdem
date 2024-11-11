@@ -51,7 +51,7 @@ def train_agent(
     # ======== callback functions used during training =========
     def save_best_fn(policy):
         model_save_path = os.path.join(
-            LOGDIR, "texas-holdem-unlimited", "dqn", "policy.pth"
+            LOGDIR, "texas-holdem-unlimited", "dqn", "policy2.pth"
         )
         torch.save(
             policy.policies[agents[AGENT_ID - 1]].state_dict(), model_save_path
