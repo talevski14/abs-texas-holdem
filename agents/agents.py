@@ -36,6 +36,7 @@ def get_agents(
             GAMMA,
             N_STEP,
             target_update_freq=TARGET_UPDATE_FREQ,
+            is_double=False,
         )
         if RESUME_PATH:
             agent_learn.load_state_dict(torch.load(RESUME_PATH))
