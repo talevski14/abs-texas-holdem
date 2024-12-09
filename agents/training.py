@@ -18,21 +18,20 @@ def train_agent(
     agent_opponent: Optional[BasePolicy] = None,
     optim: Optional[torch.optim.Optimizer] = None,
 ) -> Tuple[dict, BasePolicy]:
-    # ======== environment setup =========
     train_envs = DummyVectorEnv([get_env for _ in range(TRAINING_NUM)])
     test_envs = DummyVectorEnv([get_env for _ in range(TEST_NUM)])
-    # seed
+
     np.random.seed(SEED)
     torch.manual_seed(SEED)
     train_envs.seed(SEED)
     test_envs.seed(SEED)
 
-    # ======== agent setup =========
+
     policy, optim, agents = get_agents(
         agent_learn=agent_learn, agent_opponent=agent_opponent, optim=optim
     )
 
-    # ======== collector setup =========
+
     train_collector = Collector(
         policy,
         train_envs,
@@ -40,18 +39,18 @@ def train_agent(
         exploration_noise=True,
     )
     test_collector = Collector(policy, test_envs, exploration_noise=True)
-    # policy.set_eps(1)
+
     train_collector.collect(n_step=BATCH_SIZE * TRAINING_NUM)
 
-    # ======== tensorboard logging setup =========
+
     log_path = os.path.join(LOGDIR, "texas-holdem-unlimited", "dqn")
     writer = SummaryWriter(log_path)
     logger = TensorboardLogger(writer)
 
-    # ======== callback functions used during training =========
+
     def save_best_fn(policy):
         model_save_path = os.path.join(
-            LOGDIR, "texas-holdem-unlimited", "dqn", "policy2.pth"
+            LOGDIR, "texas-holdem-unlimited", "dqn", "policy3.pth"
         )
         torch.save(
             policy.policies[agents[AGENT_ID - 1]].state_dict(), model_save_path
@@ -69,7 +68,7 @@ def train_agent(
     def reward_metric(rews):
         return rews[:, AGENT_ID - 1]
 
-    # trainer
+
     result = offpolicy_trainer(
         policy,
         train_collector,

@@ -24,5 +24,5 @@ REWARDS_AVERAGE = 51
 WATCH = False
 AGENT_ID = 1
 RESUME_PATH = ""
-OPPONENT_PATH = ""
+OPPONENT_PATH = "log/texas-holdem-unlimited/dqn/policy2.pth"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
