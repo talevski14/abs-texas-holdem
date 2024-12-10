@@ -43,14 +43,14 @@ def train_agent(
     train_collector.collect(n_step=BATCH_SIZE * TRAINING_NUM)
 
 
-    log_path = os.path.join(LOGDIR, "texas-holdem-unlimited", "dqn")
+    log_path = os.path.join(LOGDIR, "texas-holdem-unlimited", "duelingdqn")
     writer = SummaryWriter(log_path)
     logger = TensorboardLogger(writer)
 
 
     def save_best_fn(policy):
         model_save_path = os.path.join(
-            LOGDIR, "texas-holdem-unlimited", "dqn", "policy2.pth"
+            LOGDIR, "texas-holdem-unlimited", "duelingdqn", "policy1.pth"
         )
         torch.save(
             policy.policies[agents[AGENT_ID - 1]].state_dict(), model_save_path
