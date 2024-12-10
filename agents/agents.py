@@ -27,6 +27,10 @@ def get_agents(
             action_shape,
             hidden_sizes=HIDDEN_SIZES,
             device=DEVICE,
+            dueling_param=(
+                {"hidden_sizes": [256]},
+                {"hidden_sizes": [256]},
+            )
         ).to(DEVICE)
         if optim is None:
             optim = torch.optim.Adam(net.parameters(), lr=LR)
@@ -36,7 +40,6 @@ def get_agents(
             GAMMA,
             N_STEP,
             target_update_freq=TARGET_UPDATE_FREQ,
-            is_double=False,
         )
         if RESUME_PATH:
             agent_learn.load_state_dict(torch.load(RESUME_PATH))
