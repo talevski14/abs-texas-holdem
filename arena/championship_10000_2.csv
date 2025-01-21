@@ -1,0 +1,31 @@
+agent1,agent2,agent1 sum of rewards,agent2 sum of rewards,game length average
+Agent 1: DDQN - policy 1,Agent 2: DDQN - policy 2,-20873.0,20873.0,2.0094
+Agent 1: DDQN - policy 1,Agent 3: DQN - policy 1,-10155.0,10155.0,1.0629
+Agent 1: DDQN - policy 1,Agent 4: DuelingDQN - policy 1,-31410.0,31410.0,2.4926
+Agent 1: DDQN - policy 1,Agent 5: Self play on agent 1,20111.0,-20111.0,2.1175
+Agent 1: DDQN - policy 1,Agent 6: Continued self play on agent 5,-342810.0,342810.0,7.4489
+Agent 2: DDQN - policy 2,Agent 1: DDQN - policy 1,39705.0,-39705.0,3.1841
+Agent 2: DDQN - policy 2,Agent 3: DQN - policy 1,-2688.0,2688.0,5.7757
+Agent 2: DDQN - policy 2,Agent 4: DuelingDQN - policy 1,-19666.0,19666.0,1.9901
+Agent 2: DDQN - policy 2,Agent 5: Self play on agent 1,-9770.0,9770.0,1.0082
+Agent 2: DDQN - policy 2,Agent 6: Continued self play on agent 5,1429.0,-1429.0,2.0137
+Agent 3: DQN - policy 1,Agent 1: DDQN - policy 1,-284684.0,284684.0,10.7111
+Agent 3: DQN - policy 1,Agent 2: DDQN - policy 2,-18682.0,18682.0,1.9981
+Agent 3: DQN - policy 1,Agent 4: DuelingDQN - policy 1,-6024.0,6024.0,2.7525
+Agent 3: DQN - policy 1,Agent 5: Self play on agent 1,-1391.0,1391.0,7.5927
+Agent 3: DQN - policy 1,Agent 6: Continued self play on agent 5,19075.0,-19075.0,2.026
+Agent 4: DuelingDQN - policy 1,Agent 1: DDQN - policy 1,-2279.0,2279.0,1.9963
+Agent 4: DuelingDQN - policy 1,Agent 2: DDQN - policy 2,-41882.0,41882.0,3.7513
+Agent 4: DuelingDQN - policy 1,Agent 3: DQN - policy 1,10754.0,-10754.0,1.064
+Agent 4: DuelingDQN - policy 1,Agent 5: Self play on agent 1,-1615.0,1615.0,8.4737
+Agent 4: DuelingDQN - policy 1,Agent 6: Continued self play on agent 5,-1652.0,1652.0,7.3418
+Agent 5: Self play on agent 1,Agent 1: DDQN - policy 1,-10128.0,10128.0,1.0682
+Agent 5: Self play on agent 1,Agent 2: DDQN - policy 2,2644.0,-2644.0,3.0566
+Agent 5: Self play on agent 1,Agent 3: DQN - policy 1,19959.0,-19959.0,3.0268
+Agent 5: Self play on agent 1,Agent 4: DuelingDQN - policy 1,10607.0,-10607.0,2.4386
+Agent 5: Self play on agent 1,Agent 6: Continued self play on agent 5,-20264.0,20264.0,1.99
+Agent 6: Continued self play on agent 5,Agent 1: DDQN - policy 1,-9206.0,9206.0,7.5986
+Agent 6: Continued self play on agent 5,Agent 2: DDQN - policy 2,-4555.0,4555.0,10.5509
+Agent 6: Continued self play on agent 5,Agent 3: DQN - policy 1,-8121.0,8121.0,11.2854
+Agent 6: Continued self play on agent 5,Agent 4: DuelingDQN - policy 1,-10317.0,10317.0,1.0638
+Agent 6: Continued self play on agent 5,Agent 5: Self play on agent 1,9820.0,-9820.0,1.0627

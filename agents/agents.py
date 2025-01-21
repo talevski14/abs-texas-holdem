@@ -27,10 +27,10 @@ def get_agents(
             action_shape,
             hidden_sizes=HIDDEN_SIZES,
             device=DEVICE,
-            dueling_param=(
-                {"hidden_sizes": [256]},
-                {"hidden_sizes": [256]},
-            )
+            # dueling_param=(
+            #     {"hidden_sizes": [256]},
+            #     {"hidden_sizes": [256]},
+            # )
         ).to(DEVICE)
         if optim is None:
             optim = torch.optim.Adam(net.parameters(), lr=LR)
