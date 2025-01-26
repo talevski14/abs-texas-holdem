@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv('championship_10000_2.csv')
+df = pd.read_csv('championship_10000_3.csv')
 
 players = pd.concat([
     df[['agent1', 'agent1 sum of rewards']].rename(columns={'agent1': 'player', 'agent1 sum of rewards': 'rews'}),
