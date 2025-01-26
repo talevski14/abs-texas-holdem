@@ -95,4 +95,4 @@ if __name__ == "__main__":
             })
 
     df = pd.DataFrame(results)
-    df.to_csv("championship_10000_2.csv", index=False)
+    df.to_csv("championship_10000_3.csv", index=False)
